@@ -3,7 +3,7 @@ class Admin::BooksController < ApplicationController
   layout 'admin'
 
   def index
-    @books = book.all
+    @books = Book.all
   end
 
   def create
@@ -43,7 +43,8 @@ class Admin::BooksController < ApplicationController
     redirect_to admin_books_path
   end
 
-  private book_params
+  private 
+  def book_params
     params.require(:book).permit(:title, :author, :price, :summary)
   end
 
