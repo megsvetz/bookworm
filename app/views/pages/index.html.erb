@@ -1,1 +1,8 @@
-INDEX
+<h1> All Books </h1>
+<% @books.each do |b| %>
+<%= b.title%><br>
+<%= b.author%><br>
+$<%= b.price %><br>
+<%= b.summary%><br>
+
+<% end %>
