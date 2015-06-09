@@ -1,0 +1,11 @@
+<h1> SIGN UP! </h1>
+
+<%= form_for(@new_admin, url: admin_signup_path) do |f| %>
+  Username: <%= f.text_field(:username) %><br>
+  Password: <%= f.password_field(:password) %><br>
+  Password Confirmation: <%= f.password_field(:password_confirmation) %><br>
+  Email: <%= f.text_field(:email) %><br>
+
+  <%= f.submit('Sign up!') %>
+
+  <% end %>
