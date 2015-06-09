@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
 
   root 'pages#index'
+  get '/?title' => 'base#title'
 
   namespace :admin do
     get '/' => 'base#index'
+
     get '/login' => 'base#new'
     post '/login' => 'base#create'
 
