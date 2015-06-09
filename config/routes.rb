@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+
+  root 'pages#index'
+
+  namespace :admin do
+    get '/' => 'base#index'
+    resources :books
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
