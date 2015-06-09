@@ -1,0 +1,13 @@
+<h1>Books</h1>
+  <% @books.each do |b| %>
+
+  <br>
+  <%= link_to b.title, admin_book_path(b) %><br>
+  <%= b.author %><br>
+  $ <%= b.price %><br>
+  <%= b.summary %><br><br>
+
+  <%= link_to 'Edit', edit_admin_book_path(b) %>
+  <%= link_to 'Delete', admin_book_path(b), method: :delete %>
+
+  <% end %>
