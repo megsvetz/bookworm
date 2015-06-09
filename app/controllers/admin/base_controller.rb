@@ -6,6 +6,9 @@ class Admin::BaseController < ApplicationController
     #this is for logging in
   end
 
+  def new
+  end
+
   def create
     @admin = Admin.where(username: params[:username]).first
     if @admin.present? && @admin.authenicate(params[:password])

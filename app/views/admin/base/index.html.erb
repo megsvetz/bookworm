@@ -1,1 +1,7 @@
-LOG IN SUCKERS!
+<%= form_tag(admin_books_path) do %>
+ Username: <%= text_field_tag(:username) %>
+ Password: <%= password_field_tag(:password) %>
+ <%= submit_tag('Login') %>
+ <% end %>
+ <br><br>
+ <%= link_to 'Sign up', admin_signup_path %>
