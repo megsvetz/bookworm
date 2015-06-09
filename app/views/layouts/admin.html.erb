@@ -8,6 +8,10 @@
 </head>
 <body>
   <%= render 'layouts/navbar' %>
+  <div class="flash-messages">
+    <p><%= alert %></p>
+    <p><%= notice %></p>
+  </div>
 <%= yield %>
 
 </body>
