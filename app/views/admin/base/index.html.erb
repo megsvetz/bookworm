@@ -1,12 +1,7 @@
-<%= form_tag(admin_books_path) do %>
+<%= form_tag(admin_login_path) do %>
  Username: <%= text_field_tag(:username) %>
  Password: <%= password_field_tag(:password) %>
  <%= submit_tag('Login') %>
  <% end %>
  <br><br>
  <%= link_to 'Sign up', admin_signup_path %>
-
- <div class="flash-messages">
-    <p> <%= alert %></p>
-    <p> <%= notice %></p>
-  </div>

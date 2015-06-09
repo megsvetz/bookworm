@@ -9,10 +9,11 @@ class Admin::BaseController < ApplicationController
   def new
   end
 
+
   def create
     @admin = Admin.where(username: params[:username]).first
-    if @admin.present? && @admin.authenicate(params[:password])
-      session[:admin_id] = @admin.admin_id
+    if @admin.present? && @admin.authenticate(params[:password])
+      session[:admin_id] = @admin.id
       flash[:notice] = 'Welcome Admin'
       redirect_to admin_books_path
     else
@@ -23,6 +24,6 @@ class Admin::BaseController < ApplicationController
 
   def destroy
     session[:admin_id] = nil
-    redirect_to admin_books_path
+    redirect_to admin_path
   end
 end

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     post '/login' => 'base#create'
 
     delete '/logout' => 'base#destroy'
-    get '/signup' => 'users#new'
-    post '/signup' => 'users#create'
+    get '/signup' => 'admins#new'
+    post '/signup' => 'admins#create'
 
     resources :books
   end
