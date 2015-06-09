@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin
     unless session[:admin_id].present? && current_admin.present?
       flash[:alert] = 'Sorry, you need to be logged in to do that.'
-      redirect_to login_path
+      redirect_to admin_path
     end
   end
   
