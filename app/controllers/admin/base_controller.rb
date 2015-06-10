@@ -4,6 +4,9 @@ class Admin::BaseController < ApplicationController
 
   def index
     #this is for logging in
+    if session[:admin_id]
+      redirect_to admin_books_path
+    end
   end
 
   def new
