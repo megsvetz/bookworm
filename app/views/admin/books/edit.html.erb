@@ -1,18 +1,15 @@
-<h1>Edit the Book Information</h1>
+<h1 class="header">Edit Book</h1>
 
 <%= form_for(@book, url: admin_book_path) do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: "form-control", :placeholder => "Enter Book Title", :style => "width:50%;" %>
   <br>
-  <%= f.label :author %>
-  <%= f.text_field :author %>
+
+  <%= f.text_field :author, class: "form-control", :placeholder => "Enter Book Author",:style => "width:50%;" %>
   <br>
-  <%= f.label :price %>
-  <%= f.text_field :price %>
+  <%= f.text_field :price, class: "form-control", :placeholder => "Enter Book Price",:style => "width:50%;" %>
   <br>
-  <%= f.label :summary %>
-  <%= f.text_area :summary %>
+  <%= f.text_area :summary, class: "form-control", :placeholder => "Enter Book Summary",:style => "width:50%;" %>
   <br>
   <%= f.submit("Save Edited Book") %>
   <br>
