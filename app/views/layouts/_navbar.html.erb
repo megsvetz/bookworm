@@ -1,16 +1,17 @@
 <div class="navvy">
 
-<a href="<%= admin_books_path  %>"><button type="button" class="btn btn-success">Home</button></a>
+<%= link_to('Home', admin_books_path, class: "btn btn-success")%>
 
-<a href="<%= new_admin_book_path %>"><button type="button" class="btn btn-success">Add New</button></a>
+<%= link_to('Add New', new_admin_book_path, class: "btn btn-success") %>
 
 <%if admin_signed_in? %>
-  <a href="<%= admin_logout_path %>" data-method="delete"><button type="button" class="btn btn-success">Logout</button></a>
+ <%= link_to('Logout', admin_logout_path, class: "btn btn-success", method: :delete) %>
 <% else %>
-  <a href="<%= admin_path %>"><button type="button" class="btn btn-success">Login</button></a>
+  <%= link_to('Login', admin_path, class: "btn btn-success") %>
 <% end %>
 
 </div>
 
 
-<%= link_to 'Logout', admin_logout_path, method: :delete %>
+
+
