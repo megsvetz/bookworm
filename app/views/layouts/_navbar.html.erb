@@ -1,12 +1,17 @@
-<div id='cssmenu'>
-  <ul>
-    <li><%= link_to 'Home', admin_books_path  %> </li>
-    <li><%= link_to 'Add New Book', new_admin_book_path %></li>
+<ul class="nav nav-pills nav-pills-justified">
+  <li>
+    <a href="<%= admin_books_path  %>">Home</a>
+  </li>
 
-    <%if admin_signed_in? %>
-      <%= link_to 'Logout', admin_logout_path, method: :delete %>
-    <%else%> 
-      <%= link_to 'Login', admin_login_path %>
-      <% end %>
-</div>
-<br><br>
+  <li>
+    <a href="<%= new_admin_book_path %>">Add New</a>
+  </li>
+   
+  <%if admin_signed_in? %>
+    <li> <%=link_to 'Logout', admin_logout_path, method: :delete %></li>
+  <% else %>
+    <li>
+      <a href=" <%= admin_path %> ">Login</a>
+    </li>
+    <% end %>
+</ul>
