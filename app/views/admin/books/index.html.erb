@@ -1,11 +1,14 @@
-<h1 class="page -header">Books</h1>
+<div class="pull-left" 
+  <img src="">
+</div>
+
 <table class="table table-hover table-striped">
   <thead>
     <tr>
       <th>Title</th>
       <th>Author</th>
       <th>Price</th>
-      <th>Summary</th>
+      <th class="col-md-6">Summary</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
@@ -15,7 +18,7 @@
       <td><%= link_to(b.title, admin_book_path(b)) %></td>
       <td><%= b.author %></td>
       <td>$ <%= b.price %></td>
-      <td><%= b.summary %></td>
+      <td ><%= b.summary %></td>
       <td><a href="<%= edit_admin_book_path(b) %>" class="btn btn-info"><span class = "glyphicon glyphicon-book"></span></a>
         <a href="<%= admin_book_path(b) %>" class="btn btn-danger" data-method="delete"><span class="glyphicon glyphicon-fire"></span></a>
       </td>
