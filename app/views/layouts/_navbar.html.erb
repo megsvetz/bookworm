@@ -1,20 +1,14 @@
-<ul class="nav nav-pills">
-  <li> <%= image_tag "bookwormie.png", width: "60%", height:"auto", justify: "left" %>
-  </li>
- 
-  <li>
-    <a href="<%= admin_books_path  %>">Home</a>
-  </li>
+<div class="navvy">
 
-  <li>
-    <a href="<%= new_admin_book_path %>">Add New</a>
-  </li>
-   
-  <%if admin_signed_in? %>
-    <li> <%=link_to 'Logout', admin_logout_path, method: :delete %></li>
-  <% else %>
-    <li>
-      <a href=" <%= admin_path %> ">Login</a>
-    </li>
-  <% end %>
-</ul>
+<a href="<%= admin_books_path  %>"><button type="button" class="btn btn-success">Home</button></a>
+
+<a href="<%= new_admin_book_path %>"><button type="button" class="btn btn-success">Add New</button></a>
+
+<%if admin_signed_in? %>
+  <a href="<%= admin_logout_path %>" data-method="delete"><button type="button" class="btn btn-success">Logout</button></a>
+<% else %>
+  <a href="<%= admin_path %>"><button type="button" class="btn btn-success">Login</button></a>
+<% end %>
+
+</div>
+
