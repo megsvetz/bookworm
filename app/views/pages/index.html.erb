@@ -1,14 +1,62 @@
-Sort By: <%= link_to 'Title', root_path({order_by: 'title'})  %>, 
-         <%= link_to 'Price', root_path({order_by: 'price'}) %>, 
-         <%= link_to 'Author', root_path({order_by: 'author'}) %>
+<html>
+<head>
+  <title>Bookworm</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ 
+  <div class="container">
+    <div class="row">
+      <header> 
+        <div class="col-sm-6">
+           <%= image_tag "bookwormie.png", width: "100%", height:"auto", justify: "left" %>
+        </div>
+        <div class = "navvy col-sm-6">
+         <%= link_to('Sort By Title', root_path({order_by: 'title'}), class: "btn btn-success")  %>
+         <%= link_to('Sort By Price', root_path({order_by: 'price'}), class: "btn btn-success") %>
+         <%= link_to('Sort By Author', root_path({order_by: 'author'}), class: "btn btn-success") %>
+        </div>
+      </header>
+    </div>
+  </div>
 
 
-<h1> All Books </h1>
+<!-- <h1> All Books </h1>
 <% @books.each do |b| %>
 <%= b.title%><br>
 <%= b.author%><br>
 $<%= b.price %><br>
 <%= b.summary%><br>
 <br><br>
-<% end %>
+<% end %> -->
 
+<div class="pull-left" 
+  <img src="">
+</div>
+
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+      <th class="col-md-6">Summary</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |b| %>
+    <tr>
+      <td><%= link_to(b.title, admin_book_path(b)) %></td>
+      <td><%= b.author %></td>
+      <td>$ <%= b.price %></td>
+      <td ><%= b.summary %></td>
+
+    </tr>
+  <% end %>
+</tbody>
+</table>
+</body>
+</html>

@@ -5,7 +5,7 @@
 <%= link_to('Add New', new_admin_book_path, class: "btn btn-success") %>
 
 <%if admin_signed_in? %>
- <%= link_to('Logout', admin_logout_path, class:"btn btn-success", method: :delete) %>
+ <%= link_to('Logout', admin_logout_path, class: "btn btn-success", method: :delete) %>
 <% else %>
   <%= link_to('Login', admin_path, class: "btn btn-success") %>
 <% end %>
