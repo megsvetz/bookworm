@@ -1,8 +1,12 @@
-<%= form_tag(admin_login_path) do %>
-  <%= text_field_tag :username, nil, class: "form-control", placeholder: 'Username', :style => "width:50%;" %>
-  <br>
-  <%= password_field_tag :password, nil, class: "form-control", placeholder: 'Password', :style => "width:50%;" %>
-  <br>
-  <%= submit_tag('Login') %>
+<%if admin_signed_in? %>
+  <meta http-equiv="refresh" content="0; URL='/admin/books'" />
+<%else %>
+  <%= form_tag(admin_login_path) do %>
+    <%= text_field_tag :username, nil, class: "form-control", placeholder: 'Username', :style => "width:50%;" %>
+    <br>
+    <%= password_field_tag :password, nil, class: "form-control", placeholder: 'Password', :style => "width:50%;" %>
+    <br>
+    <%= submit_tag('Login') %>
+  <% end %>
+   <br><br>
 <% end %>
- <br><br>
